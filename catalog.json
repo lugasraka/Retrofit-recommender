@@ -1,0 +1,242 @@
+[
+  {
+    "sku": "VVF43.65-OLD",
+    "name": "Legacy Valve Gen1",
+    "specs": "PN16, DN65, Cast Iron",
+    "status": "Obsolete",
+    "category": "Valves",
+    "price": null
+  },
+  {
+    "sku": "SERVICE-PM-BASIC",
+    "name": "Preventive Maintenance Package - Basic",
+    "specs": "Annual inspection, cleaning, calibration for up to 5 devices",
+    "status": "Available",
+    "category": "Services",
+    "price": "€850/year"
+  },
+  {
+    "sku": "SERVICE-PM-PRO",
+    "name": "Preventive Maintenance Package - Professional",
+    "specs": "Quarterly inspection, priority support, 10 devices, includes parts",
+    "status": "Available",
+    "category": "Services",
+    "price": "€2,400/year"
+  },
+  {
+    "sku": "SERVICE-RETROFIT",
+    "name": "Complete Retrofit Service",
+    "specs": "System assessment, replacement parts, installation, commissioning",
+    "status": "Available",
+    "category": "Services",
+    "price": "€3,500"
+  },
+  {
+    "sku": "BUNDLE-VALVE-ACT",
+    "name": "Valve & Actuator Bundle DN65",
+    "specs": "VVF53.65-ECO + SAX31.00 + installation kit",
+    "status": "Available",
+    "category": "Bundles",
+    "price": "€520"
+  },
+  {
+    "sku": "BUNDLE-CTRL-SENSOR",
+    "name": "Smart Control Package",
+    "specs": "RWD68 Controller + 2x Temp Sensors + Differential Pressure Sensor",
+    "status": "Available",
+    "category": "Bundles",
+    "price": "€420"
+  },
+  {
+    "sku": "BUNDLE-ENERGY-OPT",
+    "name": "Energy Optimization Portfolio",
+    "specs": "DDC Controller + 3x Actuators + 4x Sensors + commissioning",
+    "status": "Available",
+    "category": "Bundles",
+    "price": "€1,850"
+  },
+  {
+    "sku": "VVF53.65-ECO",
+    "name": "Acvatix Eco-Line Valve",
+    "specs": "PN25, DN65, High Efficiency, Stainless Steel",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€450"
+  },
+  {
+    "sku": "VVF53.80-ECO",
+    "name": "Acvatix Eco-Line Valve DN80",
+    "specs": "PN25, DN80, High Efficiency, Stainless Steel",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€620"
+  },
+  {
+    "sku": "VVF53.100-ECO",
+    "name": "Acvatix Eco-Line Valve DN100",
+    "specs": "PN25, DN100, High Efficiency, Stainless Steel",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€890"
+  },
+  {
+    "sku": "SAX61.03",
+    "name": "Actuator 24V",
+    "specs": "24V, 0-10V Signal, 20Nm Torque",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€120"
+  },
+  {
+    "sku": "SAX31.00",
+    "name": "Actuator 230V",
+    "specs": "230V, 3-point Signal, 20Nm Torque",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€115"
+  },
+  {
+    "sku": "SAX81.03",
+    "name": "Heavy Duty Actuator 24V",
+    "specs": "24V, 0-10V Signal, 50Nm Torque",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€285"
+  },
+  {
+    "sku": "SAX81.00",
+    "name": "Heavy Duty Actuator 230V",
+    "specs": "230V, 3-point Signal, 50Nm Torque",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€275"
+  },
+  {
+    "sku": "RWD62",
+    "name": "Room Controller Basic",
+    "specs": "Temperature Control, 2-point Output",
+    "status": "Available",
+    "category": "Controllers",
+    "price": "€85"
+  },
+  {
+    "sku": "RWD68",
+    "name": "Room Controller Advanced",
+    "specs": "Temperature & Humidity, Modbus, 0-10V Output",
+    "status": "Available",
+    "category": "Controllers",
+    "price": "€195"
+  },
+  {
+    "sku": "QAA75.110",
+    "name": "Outside Temp Sensor",
+    "specs": "PT1000, -40°C to +70°C",
+    "status": "Available",
+    "category": "Sensors",
+    "price": "€45"
+  },
+  {
+    "sku": "QAE2120.010",
+    "name": "Duct Temp Sensor",
+    "specs": "NTC, 0-50°C, 150mm probe",
+    "status": "Available",
+    "category": "Sensors",
+    "price": "€32"
+  },
+  {
+    "sku": "QBM2030-1",
+    "name": "Differential Pressure Sensor",
+    "specs": "0-1000 Pa, 4-20mA Output",
+    "status": "Available",
+    "category": "Sensors",
+    "price": "€215"
+  },
+  {
+    "sku": "QBE2103-P25",
+    "name": "Pressure Transmitter",
+    "specs": "0-25 bar, 4-20mA, G1/4",
+    "status": "Available",
+    "category": "Sensors",
+    "price": "€168"
+  },
+  {
+    "sku": "SERVICE-CALIB",
+    "name": "Sensor Calibration Service",
+    "specs": "Professional calibration for sensors, includes certificate",
+    "status": "Available",
+    "category": "Services",
+    "price": "€120/sensor"
+  },
+  {
+    "sku": "SERVICE-TRAINING",
+    "name": "Operator Training Program",
+    "specs": "4-hour on-site training for building automation systems",
+    "status": "Available",
+    "category": "Services",
+    "price": "€650"
+  },
+  {
+    "sku": "BUNDLE-HVAC-STARTER",
+    "name": "HVAC Starter Kit",
+    "specs": "Controller + 2x Actuators + 3x Sensors + basic commissioning",
+    "status": "Available",
+    "category": "Bundles",
+    "price": "€895"
+  },
+  {
+    "sku": "WARRANTY-EXT-3Y",
+    "name": "Extended Warranty 3 Years",
+    "specs": "Extended warranty coverage for all components",
+    "status": "Available",
+    "category": "Services",
+    "price": "€350"
+  },
+  {
+    "sku": "MXG461.25-5",
+    "name": "Mixing Valve 3-way DN25",
+    "specs": "PN16, DN25, Kvs 5.0, Brass",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€175"
+  },
+  {
+    "sku": "GLB161.1E",
+    "name": "Ball Valve Actuator",
+    "specs": "24V, On/Off, 5Nm, 15s runtime",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€95"
+  },
+  {
+    "sku": "AGK161.9E",
+    "name": "Modulating Damper Actuator",
+    "specs": "24V, 0-10V, 10Nm, 90s runtime",
+    "status": "Available",
+    "category": "Actuators",
+    "price": "€145"
+  },
+  {
+    "sku": "VVG44.25-6.3",
+    "name": "Globe Valve DN25",
+    "specs": "PN16, DN25, Kvs 6.3, Cast Iron",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€235"
+  },
+  {
+    "sku": "VXP47.65-40",
+    "name": "Butterfly Valve DN65",
+    "specs": "PN16, DN65, Kvs 40, Ductile Iron",
+    "status": "Available",
+    "category": "Valves",
+    "price": "€380"
+  },
+  {
+    "sku": "RWF55.50E9",
+    "name": "DDC Controller",
+    "specs": "Modbus RTU, BACnet, 8 UI/8 UO",
+    "status": "Available",
+    "category": "Controllers",
+    "price": "€425"
+  }
+]

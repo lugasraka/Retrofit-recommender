@@ -1,0 +1,109 @@
+# Expert Knowledge Base for Industrial Equipment Retrofit Recommendations
+
+## Voltage Mismatch Issues
+CRITICAL: Voltage mismatches between controllers and actuators can cause equipment damage, fire hazards, and system failures.
+- 230V controller with 24V actuator: Actuator will burn out. Immediate safety shutdown required.
+- 24V controller with 230V actuator: Actuator won't function. No safety risk but complete failure.
+- Solution: Always match controller output voltage to actuator input voltage (SAX31.00 for 230V, SAX61.03 for 24V).
+- Safety Alert: MANDATORY for any voltage mismatch detected.
+
+## Valve Efficiency Upgrades
+When energy consumption exceeds baseline by 10%+ or flow resistance is high:
+- Legacy valves (VVF43.65-OLD) should be replaced with high-efficiency models (VVF53.65-ECO)
+- Bundle option (BUNDLE-VALVE-ACT) includes valve + matching actuator + installation kit for complete solution
+- ROI typically achieved within 2-3 years through energy savings
+- Expected efficiency improvement: 15-25%
+
+## Sensor Calibration and Drift
+Sensors drift over time, especially temperature sensors. Signs include:
+- Readings varying ±2°C or more from reference
+- Inconsistent measurements between identical sensors
+- Sensors older than 5 years without calibration
+Solutions:
+- SERVICE-CALIB: Professional calibration with certificate (€120 per sensor)
+- Replacement: New sensors if beyond calibration (QAE2120.010 for duct, QAA75.110 for outdoor)
+- Preventive: Annual calibration recommended for critical sensors
+
+## Controller Upgrade Scenarios
+Legacy controllers (RWD62) lack modern features:
+- No network connectivity (Modbus/BACnet)
+- No remote monitoring or control
+- Limited to basic 2-point control
+Upgrade paths:
+- RWD68: Adds Modbus, humidity sensing, 0-10V analog control (€195)
+- RWF55.50E9: Full DDC controller with BACnet, 8 inputs/outputs (€425)
+- Bundle: BUNDLE-CTRL-SENSOR includes controller + sensors for complete system
+
+## Preventive Maintenance Programs
+IMPORTANT: Systems running 5+ years without maintenance show 20-30% performance degradation.
+- SERVICE-PM-BASIC: Annual service for up to 5 devices, includes inspection, cleaning, calibration (€850/year)
+- SERVICE-PM-PRO: Quarterly service for up to 10 devices, priority support, parts included (€2,400/year)
+- Recommendation criteria: 
+  * Basic: Small systems (1-5 devices), low criticality
+  * Pro: Medium/large systems (6-10+ devices), critical applications, 24/7 operation
+- Benefits: Extends equipment life 40%, reduces emergency repairs 60%, improves energy efficiency 15%
+
+## Complete System Optimization
+For systems with multiple issues or legacy equipment (15+ years):
+- SERVICE-RETROFIT: Complete assessment, replacement, installation, commissioning (€3,500)
+- BUNDLE-ENERGY-OPT: DDC controller + 3 actuators + 4 sensors + commissioning (€1,850)
+- BUNDLE-HVAC-STARTER: Entry-level automation upgrade (€895)
+Indicators for complete retrofit:
+- No centralized control
+- Mixed legacy components
+- Energy consumption 20%+ above modern baseline
+- Multiple component failures
+- No building automation integration
+
+## Pressure Sensor Applications
+Differential pressure sensors critical for:
+- Filter monitoring (QBM2030-1: 0-1000 Pa for air filters)
+- Pump performance (QBE2103-P25: 0-25 bar for water systems)
+- System balance verification
+- Energy optimization (pressure-based control)
+Failure symptoms: Out of range readings, system bypass active, no flow measurement
+
+## Actuator Selection Guide
+Torque requirements:
+- Standard valves DN25-DN65: 20Nm actuators (SAX31.00, SAX61.03)
+- Large valves DN80-DN100: 50Nm heavy duty (SAX81.00, SAX81.03)
+- Ball valves: 5Nm on/off (GLB161.1E)
+- Dampers: 10Nm modulating (AGK161.9E)
+Signal types:
+- 0-10V: Analog modulating control (SAX61.03, SAX81.03)
+- 3-point: Simple floating control (SAX31.00, SAX81.00)
+- On/Off: Binary control (GLB161.1E)
+
+## Bundle vs Individual Components
+RECOMMEND BUNDLES when:
+- Multiple components needed for single system
+- Customer needs complete solution including commissioning
+- Cost savings >10% vs individual purchase
+- Installation complexity requires professional service
+BUNDLES:
+- BUNDLE-VALVE-ACT: Valve + actuator + kit (€520, saves €45)
+- BUNDLE-CTRL-SENSOR: Controller + sensors (€420, saves €57)
+- BUNDLE-ENERGY-OPT: Complete optimization (€1,850, saves €200+)
+- BUNDLE-HVAC-STARTER: Starter automation (€895, saves €85)
+
+## Service Package Benefits
+Services provide value beyond hardware:
+- Professional installation and commissioning
+- Documentation and training included
+- Warranty and support
+- System optimization
+- Compliance certification
+WHEN TO RECOMMEND SERVICES:
+- Any "no error" + long runtime scenario → SERVICE-PM
+- Sensor drift → SERVICE-CALIB
+- Complex multi-component issues → SERVICE-RETROFIT
+- Training required → SERVICE-TRAINING
+- Extended protection → WARRANTY-EXT-3Y
+
+## Common Failure Patterns
+Pattern 1: Pump overworking + high flow resistance = Valve issue (recommend VVF53.65-ECO or BUNDLE-VALVE-ACT)
+Pattern 2: Actuator failed + voltage output mentioned = Voltage mismatch (match voltage + safety alert)
+Pattern 3: Inconsistent readings + sensor age >5 years = Sensor drift (SERVICE-CALIB or replacement)
+Pattern 4: Cannot integrate with BMS = Legacy controller (RWD68 or RWF55.50E9)
+Pattern 5: Long runtime without service = Preventive maintenance needed (SERVICE-PM)
+Pattern 6: Multiple aging components = System retrofit (SERVICE-RETROFIT or BUNDLE-ENERGY-OPT)

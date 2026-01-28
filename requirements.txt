@@ -2,3 +2,5 @@ streamlit
 langchain-huggingface
 langchain-core
 python-dotenv
+sentence-transformers
+faiss-cpu
