@@ -2,6 +2,8 @@
 
 **Accelerate industrial decarbonization through AI-powered equipment retrofit recommendations**
 
+🚀 **[Try Live Demo](https://retrofit-recommender-aimlrag.streamlit.app/)** -- No installation required
+
 [![Product Strategy](https://img.shields.io/badge/Product-Strategy-blue)](docs/product_strategy.md)
 [![MLOps](https://img.shields.io/badge/AI-MLOps-green)](docs/mlops_monitoring.md)
 [![User Research](https://img.shields.io/badge/Research-12_Interviews-purple)](docs/user_research/research_summary.md)
