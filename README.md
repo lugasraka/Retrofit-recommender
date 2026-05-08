@@ -106,6 +106,150 @@ This repository demonstrates **end-to-end Senior PM AI Sustainability capabiliti
 
 ---
 
+## 🤖 AI Agent Orchestration (Next-Gen Architecture)
+
+This project demonstrates a **multi-agent orchestration architecture** that enhances the original RAG + LLM pipeline with modular, specialized agents. Each agent handles a specific responsibility, enabling better transparency, testability, and extensibility.
+
+### Architecture Overview
+
+```mermaid
+flowchart TB
+    subgraph User["User Input"]
+        A[Error Description<br/>Device Info]
+    end
+    
+    subgraph Master["Master Orchestrator"]
+        B[Coordination Layer]
+    end
+    
+    subgraph Agents["Specialized Agents"]
+        C[Diagnosis Agent<br/>LLM-powered]
+        D[Product Agent<br/>LLM-powered]
+        E[Sustainability Agent<br/>Rule-based]
+        F[Financial Agent<br/>Rule-based]
+        G[Report Agent<br/>Aggregation]
+    end
+    
+    subgraph Output["Final Output"]
+        H[Comprehensive<br/>Recommendation]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    
+    style C fill:#e1f5fe
+    style D fill:#e1f5fe
+    style E fill:#f3e5f5
+    style F fill:#f3e5f5
+    style G fill:#fff3e0
+    style Master fill:#e8f5e9
+```
+
+### Agent Responsibilities
+
+| Agent | Type | Input | Output |
+|-------|------|-------|--------|
+| **Diagnosis Agent** | LLM | Error description, device info | Root cause, severity, urgency, equipment type |
+| **Product Agent** | LLM | Diagnosis + catalog | Recommended SKU, price, compatibility notes |
+| **Sustainability Agent** | Rule-based | Product + equipment type | CO2e savings, energy savings, circularity score |
+| **Financial Agent** | Rule-based | Product + sustainability | TCO, payback period, ROI calculation |
+| **Report Agent** | Aggregation | All agent outputs | Executive summary, next steps, compliance |
+
+### Workflow Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant M as Master
+    participant D as Diagnosis Agent
+    participant P as Product Agent
+    participant S as Sustainability Agent
+    participant F as Financial Agent
+    participant R as Report Agent
+
+    U->>M: Error description + device info
+    M->>D: Analyze symptoms
+    D-->>M: Root cause + severity
+    M->>P: Get product recommendation
+    P-->>M: SKU + price + reason
+    M->>S: Calculate sustainability impact
+    S-->>M: CO2e savings + energy savings
+    M->>F: Calculate financial metrics
+    F-->>M: TCO + payback + ROI
+    M->>R: Compile final report
+    R-->>U: Executive summary + recommendations
+```
+
+### Key Benefits Over Original Pipeline
+
+| Aspect | Original (RAG+LLM) | Agent Orchestration |
+|--------|-------------------|---------------------|
+| **Transparency** | Single black-box response | Visible reasoning at each step |
+| **Modularity** | Monolithic chain | Independent, testable agents |
+| **Extensibility** | Requires code changes | Add new agents easily |
+| **Error Handling** | Full failure | Isolated failures per agent |
+| **Debugging** | Difficult to trace | Agent-level tracing |
+
+### Running the Agent Orchestrator
+
+```bash
+# Requires HUGGINGFACE_API_TOKEN in .env
+python agent_orchestrator.py
+```
+
+### Example Output
+
+```
+TEST CASE 1: Valve Leaking
+============================================================
+
+[1/5] Running LLM Diagnosis Agent...
+   [OK] Diagnosis: Worn or damaged stem seal
+
+[2/5] Running LLM Product Agent...
+   [OK] Product: Acvatix Eco-Line Valve (VVF53.65-ECO)
+
+[3/5] Running Sustainability Agent...
+   [OK] CO2e Savings: 25.3 tons/year
+
+[4/5] Running Financial Agent...
+   [OK] Payback: 0.1 years
+
+[5/5] Running Report Agent...
+
+WORKFLOW COMPLETED
+
+EXECUTIVE SUMMARY:
+  Issue: Worn or damaged stem seal
+  Severity: [HIGH] HIGH
+  Action: Replace with Acvatix Eco-Line Valve
+  Payback: 0.1 years
+
+ENVIRONMENTAL:
+  CO2e Saved: 25.3 tons
+  Energy Saved: 65,700 kWh
+
+FINANCIAL:
+  Investment: $518
+  Annual Savings: $7,884
+  ROI (5yr): 6157%
+```
+
+### Future Enhancements (Roadmap)
+
+1. **Tool-Calling Agents** — Agents can query external APIs (inventory, pricing, CRM)
+2. **Multi-Turn Dialogue** — Agents ask follow-up questions before recommending
+3. **Memory Agents** — Persist user preferences and equipment history
+4. **Human-in-the-Loop** — Agents flag critical decisions for engineer approval
+5. **LangChain Integration** — Use LCEL for declarative chain composition
+
+---
+
 ## 📦 Installation & Quick Start
 
 ### Prerequisites
