@@ -169,4 +169,3 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 ---
 
 **Contact:** Raka Adrianto · [LinkedIn](https://www.linkedin.com/in/lugasraka/) · [GitHub](https://github.com/lugasraka)
-- [x] Scalability planning (freemium → enterprise path)
