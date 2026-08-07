@@ -126,10 +126,16 @@ class DiagnosisAgent(BaseAgent):
         
         error_desc = context.get("error_description", "")
         device_info = context.get("device_info", "")
+        knowledge_context = context.get("knowledge_context", "")
+        
+        knowledge_section = f"""EXPERT KNOWLEDGE:
+{knowledge_context}
+
+""" if knowledge_context else ""
         
         prompt = f"""You are an industrial equipment diagnostic specialist. Analyze the following issue and provide a structured diagnosis.
 
-ERROR DESCRIPTION:
+{knowledge_section}ERROR DESCRIPTION:
 {error_desc}
 
 DEVICE INFO:
@@ -440,73 +446,56 @@ class MasterOrchestrator:
         self.financial_agent = FinancialAgent()
         self.report_agent = ReportAgent()
     
-    def run(self, error_description: str, device_info: str) -> Dict[str, Any]:
+    def run(self, error_description: str, device_info: str, knowledge_context: str = "") -> Dict[str, Any]:
         """Execute the full LLM-powered agent workflow"""
         
         workflow_trace = []
         
         context = {
             "error_description": error_description,
-            "device_info": device_info
+            "device_info": device_info,
+            "knowledge_context": knowledge_context,
         }
         
-        print("\n" + "="*60)
-        print("STARTING LLM-POWERED AGENT ORCHESTRATION")
-        print("="*60)
-        
         # Step 1: LLM-powered Diagnosis
-        print("\n[1/5] Running LLM Diagnosis Agent...")
         diag_output = self.diagnosis_agent.execute(context)
         workflow_trace.append(diag_output)
         
         if diag_output.status == AgentStatus.FAILED:
-            return {"error": diag_output.error, "trace": workflow_trace}
+            return {"error": diag_output.error, "workflow_trace": workflow_trace}
         
         context["diagnosis"] = diag_output.output
-        print(f"   [OK] Diagnosis: {diag_output.output.get('root_cause', 'N/A')}")
         
         # Step 2: LLM-powered Product Selection
-        print("\n[2/5] Running LLM Product Agent...")
         prod_output = self.product_agent.execute(context)
         workflow_trace.append(prod_output)
         
         if prod_output.status == AgentStatus.FAILED:
-            return {"error": prod_output.error, "trace": workflow_trace}
+            return {"error": prod_output.error, "workflow_trace": workflow_trace}
         
         context["product"] = prod_output.output
-        product_info = prod_output.output.get("primary_recommendation", {})
-        print(f"   [OK] Product: {product_info.get('name', 'N/A')} ({product_info.get('sku', 'N/A')})")
         
         # Step 3: Sustainability Calculation
-        print("\n[3/5] Running Sustainability Agent...")
         sust_output = self.sustainability_agent.execute(context)
         workflow_trace.append(sust_output)
         
         if sust_output.status == AgentStatus.FAILED:
-            return {"error": sust_output.error, "trace": workflow_trace}
+            return {"error": sust_output.error, "workflow_trace": workflow_trace}
         
         context["sustainability"] = sust_output.output
-        print(f"   [OK] CO2e Savings: {sust_output.output.get('co2e_avoided_tons', 0):.1f} tons/year")
         
         # Step 4: Financial Analysis
-        print("\n[4/5] Running Financial Agent...")
         fin_output = self.financial_agent.execute(context)
         workflow_trace.append(fin_output)
         
         if fin_output.status == AgentStatus.FAILED:
-            return {"error": fin_output.error, "trace": workflow_trace}
+            return {"error": fin_output.error, "workflow_trace": workflow_trace}
         
         context["financial"] = fin_output.output
-        print(f"   [OK] Payback: {fin_output.output.get('payback_period_years', 0):.1f} years")
         
         # Step 5: Report Generation
-        print("\n[5/5] Running Report Agent...")
         report_output = self.report_agent.execute(context)
         workflow_trace.append(report_output)
-        
-        print("\n" + "="*60)
-        print("WORKFLOW COMPLETED")
-        print("="*60)
         
         return {
             "result": report_output.output,
