@@ -1,8 +1,8 @@
 # Retrofit-Recommender: Industrial Sustainability Platform
 
-**Accelerate industrial decarbonization through AI-powered equipment retrofit recommendations**
+**AI-assisted retrofit recommendations for industrial equipment**
 
-🚀 **[Try Live Demo](https://retrofit-recommender-aimlrag.streamlit.app/)** -- No installation required
+**[Try the live demo](https://retrofit-recommender-aimlrag.streamlit.app/)** - No installation required
 
 [![Product Strategy](https://img.shields.io/badge/Product-Strategy-blue)](docs/product_strategy.md)
 [![MLOps](https://img.shields.io/badge/AI-MLOps-green)](docs/mlops_monitoring.md)
@@ -13,38 +13,38 @@
 
 ---
 
-## 🎯 Product Vision
+## Product Vision
 
-Transform industrial maintenance from reactive firefighting into **proactive, data-driven sustainability optimization** that delivers measurable environmental and financial outcomes. Our AI platform reduces equipment retrofit decision cycles from **3 months to 3 days** while quantifying **CO2e impact** for regulatory reporting.
+Retrofit-Recommender turns error logs and equipment details into retrofit recommendations, then estimates CO2e avoided, energy savings, and payback. The target is to reduce the equipment retrofit decision cycle from **3 months to 3 days** while giving sustainability teams data they can use in regulatory reporting.
 
-### Key Differentiators
+### What the platform does
 
-- ✅ **AI-Powered Recommendations:** RAG + GenAI analyzes error logs to suggest optimal retrofits
-- ✅ **Sustainability-First:** Every recommendation calculates CO2e avoided, energy savings, and compliance alignment (GHG Protocol, CDP, TCFD)
-- ✅ **Instant Business Cases:** Auto-generate TCO, ROI, and payback analysis for executive approval
-- ✅ **Safety-Validated:** Built-in voltage/pressure compatibility checks with human-in-the-loop for critical decisions
-- ✅ **Vendor-Neutral:** Compare products across manufacturers with explainable rationale
+- **AI-powered recommendations:** RAG + GenAI analyzes error logs and suggests retrofit options.
+- **Carbon and energy estimates:** Each recommendation includes CO2e avoided, energy savings, and alignment with GHG Protocol, CDP, and TCFD reporting.
+- **Business cases:** Generate TCO, ROI, and payback estimates for executive review.
+- **Safety checks:** Check voltage and pressure compatibility, then flag critical decisions for engineer review.
+- **Vendor-neutral comparison:** Compare products across manufacturers and see the rationale behind each recommendation.
 
 ---
 
 ## Product Management Artifacts
 
-This repository demonstrates **end-to-end Senior PM AI Sustainability capabilities** across strategy, execution, and measurement:
+The repository combines a working Streamlit application with product, research, measurement, and MLOps documentation:
 
 ### Strategic Planning
-- **[Product Strategy](docs/product_strategy.md)** — Vision, market positioning, competitive analysis, 18-month objectives
-- **[KPIs & Measurement](docs/kpis_dashboard.md)** — North Star metrics, RAGAS evaluation, business KPIs, instrumentation plan
-- **[Go-to-Market Strategy](docs/gtm_strategy.md)** — Pricing, distribution channels, customer segmentation, $2M ARR plan
+- **[Product Strategy](docs/product_strategy.md)**: Vision, market positioning, competitive analysis, 18-month objectives
+- **[KPIs & Measurement](docs/kpis_dashboard.md)**: North Star metrics, RAGAS evaluation, business KPIs, instrumentation plan
+- **[Go-to-Market Strategy](docs/gtm_strategy.md)**: Pricing, distribution channels, customer segmentation, $2M ARR plan
 
 ### Product Discovery & Research
-- **[User Research Summary](docs/user_research/research_summary.md)** — 12 interviews, personas, journey maps, pain point analysis
-- **[Product Roadmap](docs/roadmap.md)** — Quarterly feature releases, prioritization, resource planning
+- **[User Research Summary](docs/user_research/research_summary.md)**: 12 interviews, personas, journey maps, pain point analysis
+- **[Product Roadmap](docs/roadmap.md)**: Quarterly feature releases, prioritization, resource planning
 
 ### AI/ML Excellence
-- **[MLOps & Monitoring](docs/mlops_monitoring.md)** — Model performance tracking, drift detection, A/B testing, incident response
-- **[Sustainability Calculator](sustainability_calculator.py)** — CO2e calculation engine with regional carbon intensity factors
+- **[MLOps & Monitoring](docs/mlops_monitoring.md)**: Model performance tracking, drift detection, A/B testing, incident response
+- **[Sustainability Calculator](sustainability_calculator.py)**: CO2e calculation engine with regional carbon intensity factors
 
-### Measurable Impact
+### Current Demo Metrics
 - **Recommendation Accuracy:** 87%+ (user satisfaction)
 - **CO2e Avoided:** Quantified per recommendation (10-50 tons/year typical)
 - **Decision Speed:** 3 days (vs. 3 months manual process)
@@ -52,7 +52,7 @@ This repository demonstrates **end-to-end Senior PM AI Sustainability capabiliti
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 ### 1. AI-Powered Recommendations (RAG + LLM)
 - **Architecture:** Retrieval-Augmented Generation with FAISS vector search + Meta Llama 3.1-8B
@@ -66,10 +66,10 @@ This repository demonstrates **end-to-end Senior PM AI Sustainability capabiliti
 - **Circularity Scoring:** 0-100 scale based on refurbished, recyclable, take-back attributes
 
 ### 3. Multi-Tab User Experience
-- **📋 Recommendation Tab:** Diagnosis, product details, quick impact metrics, sustainability rating (A+ to D)
-- **🌱 Sustainability Tab:** CO2e avoided, energy savings, equivalencies (cars off road, trees planted), lifecycle emissions
-- **💰 Financial Tab:** TCO breakdown, ROI calculation, business case summary for executive approval
-- **🔍 Explainability Tab:** Retrieved knowledge sources, AI model details, performance metrics (latency, confidence)
+- **Recommendation Tab:** Diagnosis, product details, quick impact metrics, sustainability rating (A+ to D)
+- **Sustainability Tab:** CO2e avoided, energy savings, equivalencies (cars off road, trees planted), lifecycle emissions
+- **Financial Tab:** TCO breakdown, ROI calculation, business case summary for executive approval
+- **Explainability Tab:** Retrieved knowledge sources, AI model details, performance metrics (latency, confidence)
 
 ### 4. Safety Validation
 - **Voltage Mismatch Detection:** Prevents 110V/220V incompatibilities
@@ -106,9 +106,9 @@ This repository demonstrates **end-to-end Senior PM AI Sustainability capabiliti
 
 ---
 
-## 🤖 AI Agent Orchestration (Next-Gen Architecture)
+## AI Agent Orchestration
 
-This project demonstrates a **multi-agent orchestration architecture** that enhances the original RAG + LLM pipeline with modular, specialized agents. Each agent handles a specific responsibility, enabling better transparency, testability, and extensibility.
+The project adds a multi-agent layer to the original RAG + LLM pipeline. Diagnosis and product selection use an LLM; sustainability, financial calculations, and report assembly run as separate agents. Each step can be inspected and tested independently.
 
 ### Architecture Overview
 
@@ -131,7 +131,7 @@ flowchart TB
     end
     
     subgraph Output["Final Output"]
-        H[Comprehensive<br/>Recommendation]
+        H[Retrofit<br/>Recommendation]
     end
     
     A --> B
@@ -185,15 +185,15 @@ sequenceDiagram
     R-->>U: Executive summary + recommendations
 ```
 
-### Key Benefits Over Original Pipeline
+### Comparison with Original Pipeline
 
 | Aspect | Original (RAG+LLM) | Agent Orchestration |
 |--------|-------------------|---------------------|
 | **Transparency** | Single black-box response | Visible reasoning at each step |
 | **Modularity** | Monolithic chain | Independent, testable agents |
-| **Extensibility** | Requires code changes | Add new agents easily |
-| **Error Handling** | Full failure | Isolated failures per agent |
-| **Debugging** | Difficult to trace | Agent-level tracing |
+| **Extensibility** | Requires changes to the chain | Add an agent as a separate step |
+| **Error Handling** | A failure stops the pipeline | Isolate failures to one agent |
+| **Debugging** | Difficult to trace | Inspect each agent's output |
 
 ### Running the Agent Orchestrator
 
@@ -240,17 +240,17 @@ FINANCIAL:
   ROI (5yr): 6157%
 ```
 
-### Future Enhancements (Roadmap)
+### Planned Extensions
 
-1. **Tool-Calling Agents** — Agents can query external APIs (inventory, pricing, CRM)
-2. **Multi-Turn Dialogue** — Agents ask follow-up questions before recommending
-3. **Memory Agents** — Persist user preferences and equipment history
-4. **Human-in-the-Loop** — Agents flag critical decisions for engineer approval
-5. **LangChain Integration** — Use LCEL for declarative chain composition
+1. **Tool-Calling Agents**: Agents can query external APIs (inventory, pricing, CRM)
+2. **Multi-Turn Dialogue**: Agents ask follow-up questions before recommending
+3. **Memory Agents**: Persist user preferences and equipment history
+4. **Human-in-the-Loop**: Agents flag critical decisions for engineer approval
+5. **LangChain Integration**: Use LCEL for declarative chain composition
 
 ---
 
-## 📦 Installation & Quick Start
+## Installation and Quick Start
 
 ### Prerequisites
 - Python 3.10 or higher
@@ -277,7 +277,7 @@ Visit `http://localhost:8501` in your browser.
 
 ---
 
-## 🎬 Usage Guide
+## Usage Guide
 
 ### Basic Workflow
 1. **Select Scenario:** Choose from 7 pre-configured industrial use cases:
@@ -291,7 +291,7 @@ Visit `http://localhost:8501` in your browser.
 
 ---
 
-## 🌱 Sustainability Methodology
+## Sustainability Methodology
 
 ```
 CO2e Avoided (tons/yr) = Baseline Power (kW) × Runtime (hrs/yr) × Efficiency Improvement (%)
@@ -304,7 +304,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 
 ---
 
-## 🔮 Roadmap
+## Roadmap
 
 | Quarter | Theme | Key Deliverables |
 |---|---|---|
@@ -317,7 +317,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 ## Project Structure
 
 ```
-├── app.py                       # Streamlit UI — Standard + Multi-Agent modes
+├── app.py                       # Streamlit UI - Standard + Multi-Agent modes
 ├── agent_orchestrator.py        # 5-agent pipeline (Diagnosis → Product → Sustainability → Financial → Report)
 ├── sustainability_calculator.py # CO2e, TCO, circularity scoring engine
 ├── catalog.json                 # 30 products (valves, actuators, sensors, controllers)
@@ -328,7 +328,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 
 ---
 
-## 📈 Key Product Metrics
+## Key Product Metrics
 
 ### Accuracy & Quality
 - **User Satisfaction:** 87% (target: 85% → 95%)
@@ -348,18 +348,18 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 
 ---
 
-## 🧪 Product Management Highlights
+## Product Management
 
 ### User Research (12 Interviews)
 **Key Findings:**
-1. **87% reactive decisions** — Equipment failures drive 9 out of 10 maintenance actions
-2. **<15% quantify CO2e** — Sustainability directors lack tools to connect retrofits to carbon reduction
-3. **6-9 month decision cycles** — Business case development takes 4-8 weeks due to manual analysis
-4. **Trust gap with vendors** — Users skeptical of "energy-efficient" claims without data
+1. **87% reactive decisions**: Equipment failures drive 9 out of 10 maintenance actions
+2. **<15% quantify CO2e**: Sustainability directors lack tools to connect retrofits to carbon reduction
+3. **6-9 month decision cycles**: Business case development takes 4-8 weeks due to manual analysis
+4. **Trust gap with vendors**: Users skeptical of "energy-efficient" claims without data
 
 **Validated Pain Points:**
-- *"By the time we get approval, the equipment has failed twice more and we've lost $200K in downtime."* — VP Operations
-- *"I report Scope 2 emissions quarterly, but I can't connect specific equipment upgrades to carbon reductions."* — Sustainability Director
+- *"By the time we get approval, the equipment has failed twice more and we've lost $200K in downtime."* - VP Operations
+- *"I report Scope 2 emissions quarterly, but I can't connect specific equipment upgrades to carbon reductions."* - Sustainability Director
 
 ### Product Strategy
 - **TAM:** $12B industrial asset management software market
@@ -368,7 +368,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 - **Competitive Moats:** Data network effect, domain expertise, sustainability IP, ecosystem integrations
 
 ### Roadmap Execution
-- **Q1 2026:** Foundation (MVP, CO2e calc, user research) — 60% complete
+- **Q1 2026:** Foundation (MVP, CO2e calc, user research): 60% complete
 - **Q2 2026:** Scale (MLOps, API, dashboard, catalog expansion to 200 products)
 - **Q3 2026:** Differentiation (GenAI personalization, multi-objective optimization, predictive maintenance)
 - **Q4 2026:** Enterprise (compliance, human-in-loop workflows, portfolio optimization)
@@ -380,7 +380,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 
 ---
 
-## 🔬 AI/ML Excellence
+## AI/ML Details
 
 ### RAG Implementation
 - **Knowledge Base:** 11 sections (valves, actuators, sensors, controllers, safety rules, maintenance best practices)
@@ -403,7 +403,7 @@ Compliance mapped per recommendation: GHG Protocol Scope 2, ISO 50001, SBTi, CDP
 
 ---
 
-## 🌱 Sustainability Impact Framework
+## Sustainability Impact
 
 ### Carbon Calculation Methodology
 ```
@@ -432,7 +432,7 @@ Where:
 
 ---
 
-## 🔮 Roadmap Highlights
+## Roadmap Details
 
 ### Q2 2026: Scale & Measure
 - ✅ MLOps monitoring (RAGAS, drift detection)
@@ -455,9 +455,9 @@ Where:
 
 ---
 
-## 🤝 Contributing
+## Contact
 
-This is a portfolio project demonstrating Senior PM AI Sustainability capabilities. For inquiries about product strategy, user research methodology, or AI implementation:
+This portfolio project covers product strategy, user research, and AI implementation. For inquiries:
 
 **Contact:** Raka Adrianto
 **LinkedIn:** https://www.linkedin.com/in/lugasraka/
@@ -465,15 +465,15 @@ This is a portfolio project demonstrating Senior PM AI Sustainability capabiliti
 
 ---
 
-## 📄 License
+## License
 
-MIT License — See [LICENSE](LICENSE) for details
+MIT License: See [LICENSE](LICENSE) for details
 
 ---
 
-## 🎓 Skills Demonstrated
+## Skills Covered
 
-This project showcases capabilities directly aligned to **Sustainability AI Lead – Sr Product Manager** role requirements:
+This project covers the following skills for a **Sustainability AI Lead / Senior Product Manager** role:
 
 ### ✅ Product Management
 - [x] End-to-end product lifecycle ownership (vision → execution → KPIs)
@@ -498,7 +498,7 @@ This project showcases capabilities directly aligned to **Sustainability AI Lead
 - [x] Regulatory compliance (EU CSRD, SBTi, energy standards)
 
 ### ✅ Cross-Functional Leadership
-- [x] Empowered team collaboration (product, engineering, data/AI, design)
+- [x] Cross-functional collaboration (product, engineering, data/AI, design)
 - [x] KPI ownership (North Star metric, accuracy, adoption, CO2e impact)
 - [x] Stakeholder communication (executive summaries, business cases)
 - [x] Outcome-focused delivery (measurable CO2e avoided, payback ROI)
